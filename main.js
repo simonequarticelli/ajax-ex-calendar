@@ -13,6 +13,8 @@
 
 $(document).ready(function(){
 
+  /////////////////////////////////////////////////////////////////////////////
+
   //data gennaio 2018
   var data_iniziale  = moment('2018-01-01', 'YYYY-MM-DD');
   //console.log(data_iniziale.format('YYYY-MM-DD'));
@@ -97,7 +99,7 @@ $(document).ready(function(){
         for (var i = 1; i <= giorni_nel_mese; i++) {
 
           //creo i giorni
-          var num_giorno = i + ' ' + data_iniziale.format('MMM');
+          var num_giorno = i;
 
           //popolo l'attributo data per confrontarlo con API
           var id = data_iniziale.format('YYYY-MM-') + zero(i);
@@ -142,8 +144,6 @@ $(document).ready(function(){
   gen_days_in_month_check_holidays(data_iniziale);
   /////////////////////////////////////////////////////////////////////////////
 
-  $('#prev').fadeOut(200);
-  
   /////////////////////////////////////////////////////////////////////////////
   $(document).on('click', '#next', function(){ //<--doc .on necessario per elemento dinamico
 
@@ -169,6 +169,13 @@ $(document).ready(function(){
       gen_days_in_month_check_holidays(data_iniziale);
 
       $('#next').fadeOut(200);
+
+      Swal.fire({
+      title: '2019 not find',
+      text: 'under construction',
+      type: 'error',
+      confirmButtonText: 'ok'
+      })
 
     }else{
 
@@ -217,6 +224,13 @@ $(document).ready(function(){
       gen_days_in_month_check_holidays(data_iniziale);
 
       $('#prev').fadeOut(200);
+
+      Swal.fire({
+      title: '2017 not find',
+      text: 'under construction',
+      type: 'error',
+      confirmButtonText: 'ok'
+      })
 
     }else{
 
